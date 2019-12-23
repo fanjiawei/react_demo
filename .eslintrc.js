@@ -1,12 +1,10 @@
 module.exports = {
-    'env': {
-        'browser': true,
-        'es6': true
-    },
     'extends': [
         'eslint:recommended',
         'plugin:react/recommended',
-        'plugin:@typescript-eslint/eslint-recommended'
+        'plugin:@typescript-eslint/eslint-recommended',
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     'globals': {
         'Atomics': 'readonly',
@@ -18,7 +16,8 @@ module.exports = {
             'jsx': true
         },
         'ecmaVersion': 2018,
-        'sourceType': 'module'
+        'sourceType': 'module',
+        'project': './tsconfig.json'
     },
     'plugins': [
         'react',
@@ -36,9 +35,9 @@ module.exports = {
         'react': {
             'pragma': 'React',  // Pragma to use, default to "React"
             'version': 'detect' // React version. "detect" automatically picks the version you have installed.
-                                 // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
-                                 // default to latest and warns if missing
-                                 // It will default to "detect" in the future
+            // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+            // default to latest and warns if missing
+            // It will default to "detect" in the future
         }
     }
 };
