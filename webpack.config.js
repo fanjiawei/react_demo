@@ -13,9 +13,9 @@ module.exports = {
         filename: isProd ? '[name].[hash:8].js' : '[name].js'
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', 'scss']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.css']
     },
-
+    devtool: isProd ? false : 'eval-source-map',
     module: {
         rules: [
             {
@@ -39,12 +39,14 @@ module.exports = {
                 loader: 'source-map-loader'
             },
             {
-                test: /\.s?css$/,
-                exclude: /node_modules/,
+                test: /\.css$/,
+                exclude: /\.module\.pcss$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.module\.pcss$/,
                 use: [
-                    {
-                        loader: 'style-loader'
-                    },
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {

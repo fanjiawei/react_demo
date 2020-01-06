@@ -73,16 +73,8 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
 
     /* Advanced Options */
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
     /* Disallow inconsistently-cased references to the same file. */
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "postCssOptions": true
-        }
-      }
-    ]
   },
   "exclude": [
     "node_modules",
